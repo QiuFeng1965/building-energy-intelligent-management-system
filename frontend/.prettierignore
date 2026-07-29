@@ -1,0 +1,4 @@
+# Prettier 忽略项
+node_modules
+dist
+*.config.js

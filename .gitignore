@@ -1,0 +1,110 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# ===== 虚拟环境 =====
+venv/
+env/
+ENV/
+.venv/
+env.bak/
+venv.bak/
+
+# ===== 环境变量与密钥（绝对禁止入库）=====
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# ===== 数据库与模型文件（体积大，不入库）=====
+backend/data/*.db
+backend/data/*.db-journal
+backend/data/*.db-wal
+backend/data/*.db-shm
+backend/data/*.pkl
+backend/enterprise_building_energy.db
+backend/building_energy.db
+
+# ===== 日志与临时文件 =====
+backend/logs/*
+backend/temp/*
+backend/uvicorn_*.txt
+*.log
+# 根目录临时文件（调试脚本、Office 临时锁文件 ~$*.docx）
+/temp/
+~$*.docx
+~$*.xlsx
+~$*.pptx
+# 项目根目录的扫描/调试产物
+scan_issues.json
+verify_all.py
+
+
+# ===== Node / 前端 =====
+node_modules/
+dist/
+dist-ssr/
+.npm/
+.pnpm-store/
+.yarn/
+*.local
+
+# ===== 编辑器与系统 =====
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== 构建产物 =====
+build/
+*.spec
+
+# ===== Docker 本地卷 =====
+docker-data/
+postgres-data/
+
+# ===== 大体积数据文件（禁止入库，超过 GitHub 单文件 100MB 限制）=====
+*.sql
+*.csv
+# 数据湖目录整体排除（仅保留 README 说明，原始数据集不入库）
+*Data Lake*/
+!*Data Lake*/README.md
+# Office 临时锁文件已在上方处理
+
+# ===== 项目资产包与文档包（体积过大，不入库；如需分发走 Release 附件）=====
+# 擎翼数字中枢核心资产包（docx/pdf 白皮书，单文件 4-28 MB）
+擎翼数字中枢*/
+# 多模态视觉诊断凭证（jpg 图片集）
+多模态视觉诊断凭证*/
+# 全域资产运行态势自动化复盘与决策沙盘（docx/jpg 样板图）
+全域资产运行态势自动化复盘与决策沙盘*/
+# 全链路 API 自动化校验与零信任熔断战报（HTML 报告）
+全链路 API 自动化校验与零信任熔断战报*/
+# 大模型红队对抗演练（仅保留 README，测试 txt 不入库）
+大模型红队对抗演练与指令“越狱”防御体系*/
+# 全域基础设施运行安全与维保标准化大纲（仅保留 README，手册 txt 不入库）
+全域基础设施运行安全与维保标准化大纲*/
+
+# ===== Office 文档与大体积图片（白皮书/报告/样板图走 Release）=====
+*.docx
+*.pdf
+*.pptx
+*.xlsx
+# 项目根目录已有的报告 md 文件保留（小体积），仅排除大图片
+backend/assets/*.png

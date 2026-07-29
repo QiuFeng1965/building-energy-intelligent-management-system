@@ -1,0 +1,5 @@
+# ESLint 9 扁平配置主要使用 eslint.config.js 的 ignores 字段；
+# 本文件作为兼容保留，内容与 eslint.config.js 中的 ignores 保持一致。
+node_modules
+dist
+*.config.js

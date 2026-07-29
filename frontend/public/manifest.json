@@ -1,0 +1,37 @@
+{
+  "name": "擎翼数字中枢 - 楼宇能源智能管理系统",
+  "short_name": "擎翼能源",
+  "description": "楼宇能源智能管理系统：全息孪生、能效诊断、AI 策略寻优、ESG 报告",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f0f4f8",
+  "theme_color": "#4f46e5",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "shortcuts": [
+    {
+      "name": "能源态势总览",
+      "url": "/dashboard",
+      "description": "查看能源大屏"
+    },
+    {
+      "name": "AI 策略寻优",
+      "url": "/ai-agent",
+      "description": "AI 智能助手"
+    },
+    {
+      "name": "告警中心",
+      "url": "/advanced/ops",
+      "description": "查看实时告警"
+    }
+  ]
+}

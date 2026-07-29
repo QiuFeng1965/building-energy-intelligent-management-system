@@ -1,0 +1,25 @@
+# 后端 Python 依赖
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+pydantic==2.9.2
+python-dotenv==1.0.1
+PyJWT==2.9.0
+bcrypt==4.2.0
+openai==1.51.0
+httpx==0.27.2
+apscheduler==3.10.4
+sqlglot==23.17.0
+prophet==1.1.6
+pandas==2.2.3
+scikit-learn==1.5.2
+joblib==1.4.2
+python-multipart==0.0.12
+# Excel 导出（pandas to_excel 引擎）
+openpyxl==3.1.5
+# PostgreSQL 驱动（P0-3 迁移用）
+psycopg2-binary==2.9.9
+# 限流（P1-1 用）
+slowapi==0.1.9
+# 测试（P0-2 用）
+pytest==8.3.3
+pytest-asyncio==0.24.0

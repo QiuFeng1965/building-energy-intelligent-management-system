@@ -1,0 +1,42 @@
+# 版本控制与依赖
+node_modules
+dist
+.git
+
+# Python 缓存与测试
+*.log
+__pycache__
+.pytest_cache
+*.pyc
+
+# 敏感配置文件（生产环境通过 env_file 或 K8s Secret 注入）
+.env
+.env.*
+*.pem
+*.key
+
+# 数据库与日志（生产环境使用外部 PostgreSQL）
+data/
+logs/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# 模型与临时文件
+*.pkl
+assets/
+temp/
+mcp/
+
+# 开发工具脚本（不需要打入镜像）
+scripts/
+tests/
+check_*.py
+_check_db.py
+
+# Alembic 迁移历史（按需保留，生产环境独立执行迁移）
+# alembic/
+
+# uvicorn 日志
+uvicorn_*.txt

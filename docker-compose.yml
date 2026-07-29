@@ -1,0 +1,82 @@
+# 擎翼数字中枢 — 容器化编排
+# 启动方式：docker-compose up -d
+# 停止方式：docker-compose down
+# 查看日志：docker-compose logs -f backend
+
+services:
+  # ===== PostgreSQL 数据库（生产环境） =====
+  postgres:
+    image: postgres:16-alpine
+    container_name: qingyi_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: enterprise_building_energy
+      POSTGRES_USER: qingyi
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?必须设置 POSTGRES_PASSWORD 环境变量}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/data/database_dump.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U qingyi"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - qingyi_net
+
+  # ===== 后端 FastAPI =====
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: qingyi_backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    environment:
+      # 覆盖 .env 中的 DB 配置，指向 PostgreSQL 容器
+      - DATABASE_URL=postgresql+psycopg2://qingyi:${POSTGRES_PASSWORD:?必须设置 POSTGRES_PASSWORD 环境变量}@postgres:5432/enterprise_building_energy
+      - DB_TYPE=postgres
+    volumes:
+      # 挂载数据目录（SQLite 模式 / 模型文件）
+      - ./backend/data:/app/data
+      - ./backend/assets:/app/assets
+      - ./backend/logs:/app/logs
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      # liveness 探针：进程存活即 200
+      test: ["CMD-SHELL", "python -c \"import urllib.request;urllib.request.urlopen('http://localhost:8000/health',timeout=3)\" || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - qingyi_net
+
+  # ===== 前端 Vue3 + nginx =====
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: qingyi_frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - qingyi_net
+
+volumes:
+  postgres_data:
+
+networks:
+  qingyi_net:
+    driver: bridge
