@@ -108,3 +108,9 @@ postgres-data/
 *.xlsx
 # 项目根目录已有的报告 md 文件保留（小体积），仅排除大图片
 backend/assets/*.png
+
+# ===== 演示视频源文件（仅保留 GIF 动图入库）=====
+demos/videos/
+demos/*.webm
+demos/palette_*.png
+demos/preview_*.png
