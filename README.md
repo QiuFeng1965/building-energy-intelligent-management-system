@@ -19,43 +19,145 @@
 
 ## 演示动图
 
-> 以下为 9 大核心页面的实际运行录屏（GIF 动图）
+> 以下为 9 大核心页面及其内部子功能（tab/弹窗/图表交互）的实际运行录屏（共 27 个 GIF 动图）
 
 ### 1. 登录页 — 安全入口，JWT 身份认证
 
 ![登录页](demos/gifs/01_login.gif)
 
+---
+
 ### 2. 全息建筑孪生 — 3D 实时数字孪生，鼠标拖拽旋转
 
 ![全息建筑孪生](demos/gifs/02_spatial_twin.gif)
+
+---
 
 ### 3. 能源态势总览 — 全楼能耗全景，ECharts 数据可视化
 
 ![能源态势总览](demos/gifs/03_dashboard.gif)
 
+**子功能演示：**
+
+#### 3.1 实时功率曲线 & 能耗分布饼图
+
+![实时功率](demos/gifs/10_dashboard_realtime.gif)
+
+#### 3.2 设备健康度雷达图 & 异常告警
+
+![设备健康度](demos/gifs/11_dashboard_health.gif)
+
+---
+
 ### 4. 能效诊断分析 — 能耗趋势，时间范围切换，图表交互
 
 ![能效诊断分析](demos/gifs/04_energy_analysis.gif)
+
+**子功能演示：**
+
+#### 4.1 AI 能耗预测（Prophet）& 时间范围切换（12/24/48h）
+
+![AI预测](demos/gifs/12_energy_predict.gif)
+
+#### 4.2 RUL 预测性维护面板 & COP 能效分析弹窗
+
+![RUL预测](demos/gifs/13_energy_rul.gif)
+
+---
 
 ### 5. 能耗设备监测 — 设备级实时监控，分类切换
 
 ![能耗设备监测](demos/gifs/05_devices.gif)
 
+**子功能演示：**
+
+#### 5.1 设备类型筛选 & 数据表格
+
+![设备筛选](demos/gifs/14_devices_filter.gif)
+
+#### 5.2 设备详情档案弹窗
+
+![设备详情](demos/gifs/15_devices_detail.gif)
+
+---
+
 ### 6. AI 策略寻优 — 大模型流式对话，实时分析能耗
 
 ![AI 策略寻优](demos/gifs/06_ai_agent.gif)
+
+**子功能演示：**
+
+#### 6.1 智能调度指令对话（Text-to-SQL + RAGFlow）
+
+![AI对话](demos/gifs/16_ai_dialog.gif)
+
+---
 
 ### 7. 全局数据驾驶舱 — 管理视角数据聚合，多维交叉分析
 
 ![全局数据驾驶舱](demos/gifs/07_admin_dashboard.gif)
 
+**子功能演示（5 大 Tab）：**
+
+#### 7.1 孪生全局总览
+
+![总览](demos/gifs/17_admin_overview.gif)
+
+#### 7.2 知识库管理（向量库实时状态）
+
+![知识库](demos/gifs/18_admin_kb.gif)
+
+#### 7.3 AI 对话审计 & 系统告警
+
+![审计告警](demos/gifs/19_admin_audit.gif)
+
+---
+
 ### 8. 前沿能力中心 — 高级能力展示，卡片悬停交互
 
 ![前沿能力中心](demos/gifs/08_frontier_hub.gif)
 
+**子功能演示（3 分类 10 大 Tab）：**
+
+#### 8.1 异常检测 & 根因分析（能源智能分析）
+
+![异常检测](demos/gifs/20_frontier_anomaly.gif)
+
+#### 8.2 碳中和路径推演
+
+![碳中和](demos/gifs/21_frontier_carbon.gif)
+
+#### 8.3 多智能体协作 & 知识图谱（智能体与知识）
+
+![多智能体](demos/gifs/22_frontier_ai.gif)
+
+#### 8.4 3D 实时数字孪生（数字孪生与运维）
+
+![3D孪生](demos/gifs/23_frontier_twin3d.gif)
+
+---
+
 ### 9. 进阶能力中心 — ESG 碳追踪与投资决策闭环
 
 ![进阶能力中心](demos/gifs/09_advanced_hub.gif)
+
+**子功能演示（3 分类 13 大 Tab）：**
+
+#### 9.1 设备健康度 & RUL 预测（能源诊断与优化）
+
+![设备健康度](demos/gifs/24_advanced_rul.gif)
+
+#### 9.2 能耗基准对标
+
+![能耗对标](demos/gifs/25_advanced_benchmark.gif)
+
+#### 9.3 智能告警中心 & 工单全生命周期（运营管理）
+
+![智能告警](demos/gifs/26_advanced_alert.gif)
+
+#### 9.4 ESG 报告 & ROI 测算（ESG 与投资决策）
+
+![ESG](demos/gifs/27_advanced_esg.gif)
 
 ---
 
