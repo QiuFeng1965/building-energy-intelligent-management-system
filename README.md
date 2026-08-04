@@ -17,6 +17,48 @@
 
 ---
 
+## 演示动图
+
+> 以下为 9 大核心页面的实际运行录屏（GIF 动图）
+
+### 1. 登录页 — 安全入口，JWT 身份认证
+
+![登录页](demos/gifs/01_login.gif)
+
+### 2. 全息建筑孪生 — 3D 实时数字孪生，鼠标拖拽旋转
+
+![全息建筑孪生](demos/gifs/02_spatial_twin.gif)
+
+### 3. 能源态势总览 — 全楼能耗全景，ECharts 数据可视化
+
+![能源态势总览](demos/gifs/03_dashboard.gif)
+
+### 4. 能效诊断分析 — 能耗趋势，时间范围切换，图表交互
+
+![能效诊断分析](demos/gifs/04_energy_analysis.gif)
+
+### 5. 能耗设备监测 — 设备级实时监控，分类切换
+
+![能耗设备监测](demos/gifs/05_devices.gif)
+
+### 6. AI 策略寻优 — 大模型流式对话，实时分析能耗
+
+![AI 策略寻优](demos/gifs/06_ai_agent.gif)
+
+### 7. 全局数据驾驶舱 — 管理视角数据聚合，多维交叉分析
+
+![全局数据驾驶舱](demos/gifs/07_admin_dashboard.gif)
+
+### 8. 前沿能力中心 — 高级能力展示，卡片悬停交互
+
+![前沿能力中心](demos/gifs/08_frontier_hub.gif)
+
+### 9. 进阶能力中心 — ESG 碳追踪与投资决策闭环
+
+![进阶能力中心](demos/gifs/09_advanced_hub.gif)
+
+---
+
 ## 核心能力矩阵
 
 | 模块 | 能力描述 | 关键技术 |
